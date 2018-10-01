@@ -1,19 +1,41 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 
-const IndexPage = () => (
-  <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
+export default ({data}) => {
 
-    <p>Sippa dai</p>
+  console.log("sss: " + JSON.stringify(data.allMarkdownRemark, null, 2));
+  return (
+    <Layout>
+      <h1>Hi people</h1>
+      <p>Welcome to your new Gatsby site.</p>
+      <p>Now go build something great.</p>
+      <Link to="/page-2/">Go to page 2</Link>
 
-    <p>Daba dii</p>
-  </Layout>
-)
+      {data.allMarkdownRemark.edges.map((item, i) => (
+        <p key={i}><Link to={item.node.frontmatter.path}>{item.node.frontmatter.title}</Link></p>
+      ))}
+    </Layout>
+  );
+}
 
-export default IndexPage
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          html
+          headings {
+            depth
+            value
+          }
+          frontmatter {
+            path
+            title
+          }
+        }
+      }
+    }
+  }
+`
