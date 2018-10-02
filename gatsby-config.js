@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Home of Janimatti Ellonen',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
