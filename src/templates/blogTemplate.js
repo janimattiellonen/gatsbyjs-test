@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image";
 
 import Layout from '../components/layout';
 
@@ -14,6 +15,10 @@ export default function Template({
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.date}</h2>
+
+
+          <div><Img sizes={frontmatter.cover_image.childImageSharp.fixed} /></div>
+
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
@@ -32,6 +37,14 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        cover_image {
+          publicURL
+          childImageSharp {
+            fixed(width: 125, height: 125) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
     }
   }
