@@ -8,12 +8,6 @@ import logo from "../images/gatsbyjs-logo.png";
 export default ({data}) => {
   return (
     <Layout>
-      <h1>Hi people!</h1>
-      <p>Welcome to my humble blog.</p>
-      <p><Link to="/page-2/">Go to page 2</Link></p>
-
-      <p><img src={logo} /></p>
-
       <ul>
         {data.allMarkdownRemark.edges.map((item, i) => (
           <li key={i}><Link to={item.node.frontmatter.path}>{item.node.frontmatter.title}</Link></li>
