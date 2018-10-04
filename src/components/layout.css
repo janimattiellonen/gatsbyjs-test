@@ -623,12 +623,24 @@ pre tt:after {
   }
 }
 
-
 .main-container {
   margin: auto 20px;
   max-width: 960px;
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
+}
+
+h2.date {
+  font-size: 1rem;
+  color: gray;
+}
+
+.blog-post h1 {
+  margin-bottom: 0.5rem;
+}
+
+.blog-post-content {
+  margin-top: 20px;
 }
 
 img + span.caption {
