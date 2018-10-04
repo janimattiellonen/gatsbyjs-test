@@ -1,6 +1,6 @@
 ---
 path: "/blog/the-peculiar-sport-called-discgolf"
-date: "2017-11-07"
+date: "2017-10-03"
 title: "The peculiar sport called disc golf"
 cover_image: "./disc-wall.png"
 
