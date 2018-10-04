@@ -631,6 +631,14 @@ pre tt:after {
   padding-top: 0;
 }
 
+img + span.caption {
+  font-size: 0.8rem;
+  color: gray;
+  margin-top: -30px;
+  display: block;
+  line-height: 1.4rem;
+}
+
 @media screen and (min-width: 1000px) {
   .main-container {
     margin: 0 auto;
